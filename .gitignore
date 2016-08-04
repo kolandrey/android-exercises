@@ -26,6 +26,18 @@ proguard/
 # Log Files
 *.log
 
+# Android Studio
+.idea/
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp
+
 # Android Studio Navigation editor temp files
 .navigation/
 
@@ -38,3 +50,10 @@ captures/
 
 # Keystore files
 *.jks
+
+# Dolphin files
+.directory
+.DS_Store
+
+# OSX files
+.DS_Store
