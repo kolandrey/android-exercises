@@ -21,6 +21,7 @@ public class ColorDisplay extends AppCompatActivity implements View.OnClickListe
     private EditText editTextGreen;
     private EditText editTextBlue;
     private RelativeLayout relativeLayout;
+    private boolean changeFlag = false;
 
 
     @Override
@@ -40,7 +41,10 @@ public class ColorDisplay extends AppCompatActivity implements View.OnClickListe
             red = savedInstanceState.getInt("red");
             green = savedInstanceState.getInt("green");
             blue = savedInstanceState.getInt("blue");
-            setActivityBackground();
+            changeFlag = savedInstanceState.getBoolean("changeFlag");
+            if (changeFlag) {
+                setActivityBackground();
+            }
         }
 
 
@@ -52,6 +56,7 @@ public class ColorDisplay extends AppCompatActivity implements View.OnClickListe
         outState.putInt("red", red);
         outState.putInt("green", green);
         outState.putInt("blue", blue);
+        outState.putBoolean("changeFlag", changeFlag);
     }
 
     @Override
@@ -61,6 +66,7 @@ public class ColorDisplay extends AppCompatActivity implements View.OnClickListe
             green = Integer.parseInt(editTextGreen.getText().toString());
             blue = Integer.parseInt(editTextBlue.getText().toString());
             setActivityBackground();
+            changeFlag = true;
         } catch (NumberFormatException e) {
             Toast.makeText(getApplicationContext(), "Wrong values", Toast.LENGTH_LONG).show();
         }
