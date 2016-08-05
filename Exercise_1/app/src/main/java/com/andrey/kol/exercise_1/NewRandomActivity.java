@@ -10,6 +10,9 @@ import java.util.Random;
 
 public class NewRandomActivity extends AppCompatActivity implements View.OnClickListener {
 
+    final static int RANDOM_NUMBER = 101;
+    final static String STATE_NUMBER = "number";
+
     private Button buttonRandom;
     private TextView viewRandom;
     private Random randomNumber;
@@ -22,11 +25,6 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
 
         viewRandom = (TextView) findViewById(R.id.textView);
 
-        if (savedInstanceState != null) {
-            numberState = savedInstanceState.getInt("number");
-            viewRandom.setText(String.valueOf(numberState));
-        }
-
         buttonRandom = (Button) findViewById(R.id.button);
 
         randomNumber = new Random();
@@ -36,14 +34,14 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        numberState = randomNumber.nextInt(101);
+        numberState = randomNumber.nextInt(RANDOM_NUMBER);
         viewRandom.setText(String.valueOf(numberState));
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("number", numberState);
+        outState.putInt(STATE_NUMBER, numberState);
     }
 
 }
