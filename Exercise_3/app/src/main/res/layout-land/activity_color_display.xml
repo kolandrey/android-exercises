@@ -21,7 +21,7 @@
         android:inputType="number"
         android:ems="3"
         android:id="@+id/editTextRed"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/editTextGreen"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -30,8 +30,9 @@
         android:inputType="number"
         android:ems="3"
         android:id="@+id/editTextGreen"
-        android:layout_below="@+id/editTextRed"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/editTextBlue"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -39,18 +40,20 @@
         android:inputType="number"
         android:ems="3"
         android:id="@+id/editTextBlue"
-        android:layout_below="@+id/editTextGreen"
-        android:layout_alignLeft="@+id/editTextGreen"
-        android:layout_alignStart="@+id/editTextGreen" />
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/buttonDisplayColor"
         android:id="@+id/buttonDisplayColor"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp" />
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp"
+        android:layout_above="@+id/editTextBlue"
+        android:layout_toRightOf="@+id/editTextRed"
+        android:layout_toEndOf="@+id/editTextRed" />
 
     <TextView
         android:layout_width="wrap_content"

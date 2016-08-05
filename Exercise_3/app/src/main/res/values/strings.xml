@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Exercise_3</string>
+    <string name="red">red:</string>
+    <string name="green">green:</string>
+    <string name="blue">blue:</string>
+    <string name="buttonDisplayColor">Display Color</string>
 </resources>
