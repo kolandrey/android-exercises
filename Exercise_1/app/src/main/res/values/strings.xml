@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Exercise_1</string>
+    <string name="buttonRandom">New Random</string>
+    <string name="viewRandom">100</string>
 </resources>
