@@ -12,14 +12,21 @@ import java.text.DecimalFormat;
 
 public class BmiActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button computeButton;
-    private Button resetButton;
+    final static String DECIMAL_FORMAT = "#0.00";
+    final static String EMPTY_SET_TEXT = "";
+    final static String WARNING = "Wrong values";
+    final static String STATE_LENGTH = "length";
+    final static String STATE_WEIGHT = "weight";
+    final static String STATE_BMI = "bmiNumber";
+
+    private Button buttonCompute;
+    private Button buttonReset;
     private TextView textViewIndex;
     private EditText editTextLength;
     private EditText editTextWeight;
+    private String bmiNumber;
     private double length;
     private double weight;
-    private String bmiNumber;
 
 
     @Override
@@ -27,21 +34,21 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
-        computeButton = (Button) findViewById(R.id.buttonCompute);
-        resetButton = (Button) findViewById(R.id.buttonReset);
+        buttonCompute = (Button) findViewById(R.id.buttonCompute);
+        buttonReset = (Button) findViewById(R.id.buttonReset);
         editTextLength = (EditText) findViewById(R.id.editLength);
         editTextWeight = (EditText) findViewById(R.id.editWeight);
         textViewIndex = (TextView) findViewById(R.id.textIndex);
 
         bmiNumber = getString(R.string.textIndex);
 
-        computeButton.setOnClickListener(this);
-        resetButton.setOnClickListener(this);
+        buttonCompute.setOnClickListener(this);
+        buttonReset.setOnClickListener(this);
 
         if (savedInstanceState != null) {
-            length = savedInstanceState.getDouble("length");
-            weight = savedInstanceState.getDouble("weight");
-            bmiNumber = savedInstanceState.getString("bmiNumber");
+            length = savedInstanceState.getDouble(STATE_LENGTH);
+            weight = savedInstanceState.getDouble(STATE_WEIGHT);
+            bmiNumber = savedInstanceState.getString(STATE_BMI);
             bmiInit();
         }
     }
@@ -49,9 +56,9 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putDouble("length", length);
-        outState.putDouble("weight", weight);
-        outState.putString("bmiNumber", bmiNumber);
+        outState.putDouble(STATE_LENGTH, length);
+        outState.putDouble(STATE_WEIGHT, weight);
+        outState.putString(STATE_BMI, bmiNumber);
     }
 
     @Override
@@ -60,12 +67,12 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
             case R.id.buttonCompute:
                 length = Double.parseDouble(editTextLength.getText().toString());
                 weight = Double.parseDouble(editTextWeight.getText().toString());
-                bmiNumber = new DecimalFormat("#0.00").format((weight / (length * length)));
+                bmiNumber = new DecimalFormat(DECIMAL_FORMAT).format((weight / (length * length)));
                 bmiInit();
                 break;
             case R.id.buttonReset:
-                editTextLength.setText("");
-                editTextWeight.setText("");
+                editTextLength.setText(EMPTY_SET_TEXT);
+                editTextWeight.setText(EMPTY_SET_TEXT);
                 textViewIndex.setText(getString(R.string.textIndex));
                 break;
         }
@@ -73,16 +80,13 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
 
     private void bmiInit() {
         try {
-            if (this.length > 999 || this.weight > 999) {
-                throw new InvalidValueException();
+            if (this.length < 0 || this.weight < 0) {
+                Toast.makeText(getApplicationContext(), WARNING, Toast.LENGTH_LONG).show();
             } else {
                 textViewIndex.setText(this.bmiNumber);
             }
         } catch (NumberFormatException e) {
-            Toast.makeText(getApplicationContext(), "Wrong values", Toast.LENGTH_LONG).show();
-        } catch (InvalidValueException e) {
-            Toast.makeText(getApplicationContext(), "Wrong values", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), WARNING, Toast.LENGTH_LONG).show();
         }
-
     }
 }

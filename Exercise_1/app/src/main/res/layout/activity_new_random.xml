@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewRandomActivity">
+    tools:context=".NewRandomActivity"
+    android:id="@+id/rl">
 
     <Button
         android:id="@+id/button"
@@ -32,7 +33,7 @@
             android:layout_centerVertical="true"
             android:text="@string/viewRandom"
             android:textIsSelectable="false"
-            android:textSize="150sp" />
+            android:textSize="200sp" />
 
     </RelativeLayout>
 
