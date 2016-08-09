@@ -1,13 +1,9 @@
 package com.andrey.kol.exercise_1;
 
-import android.annotation.TargetApi;
-import android.content.res.Resources;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -15,7 +11,6 @@ import java.util.Random;
 public class NewRandomActivity extends AppCompatActivity implements View.OnClickListener {
 
     final static int RANDOM_NUMBER = 101;
-    final static String STATE_NUMBER = "number";
 
     private Button buttonRandom;
     private TextView viewRandom;
@@ -26,8 +21,6 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_random);
-        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl);
-        relativeLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
         viewRandom = (TextView) findViewById(R.id.textView);
 
@@ -43,11 +36,4 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
         numberState = randomNumber.nextInt(RANDOM_NUMBER);
         viewRandom.setText(String.valueOf(numberState));
     }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt(STATE_NUMBER, numberState);
-    }
-
 }
