@@ -2,8 +2,9 @@
     <string name="app_name">Exercise_2</string>
     <string name="textLength">length(use . instead ,  value in meters):</string>
     <string name="textWeight">weight(value in kg):</string>
-    <string name="textIndex">Body-Mass Index</string>
+    <string name="textEmpty"></string>
     <string name="buttonCompute">Compute</string>
     <string name="buttonReset">Reset</string>
+    <string name="warning">"Wrong values"</string>
 
 </resources>

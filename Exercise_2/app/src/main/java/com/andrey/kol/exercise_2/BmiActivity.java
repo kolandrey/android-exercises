@@ -12,12 +12,9 @@ import java.text.DecimalFormat;
 
 public class BmiActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final static String DECIMAL_FORMAT = "#0.00";
-    final static String EMPTY_SET_TEXT = "";
-    final static String WARNING = "Wrong values";
-    final static String STATE_LENGTH = "length";
-    final static String STATE_WEIGHT = "weight";
+    final static String DECIMAL_FORMAT = "#0.0";
     final static String STATE_BMI = "bmiNumber";
+    public static final int Zero = 0;
 
     private Button buttonCompute;
     private Button buttonReset;
@@ -25,8 +22,6 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
     private EditText editTextLength;
     private EditText editTextWeight;
     private String bmiNumber;
-    private double length;
-    private double weight;
 
 
     @Override
@@ -40,14 +35,10 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
         editTextWeight = (EditText) findViewById(R.id.editWeight);
         textViewIndex = (TextView) findViewById(R.id.textIndex);
 
-        bmiNumber = getString(R.string.textIndex);
-
         buttonCompute.setOnClickListener(this);
         buttonReset.setOnClickListener(this);
 
         if (savedInstanceState != null) {
-            length = savedInstanceState.getDouble(STATE_LENGTH);
-            weight = savedInstanceState.getDouble(STATE_WEIGHT);
             bmiNumber = savedInstanceState.getString(STATE_BMI);
             bmiInit();
         }
@@ -56,8 +47,6 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putDouble(STATE_LENGTH, length);
-        outState.putDouble(STATE_WEIGHT, weight);
         outState.putString(STATE_BMI, bmiNumber);
     }
 
@@ -65,28 +54,37 @@ public class BmiActivity extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonCompute:
-                length = Double.parseDouble(editTextLength.getText().toString());
-                weight = Double.parseDouble(editTextWeight.getText().toString());
-                bmiNumber = new DecimalFormat(DECIMAL_FORMAT).format((weight / (length * length)));
-                bmiInit();
+                buttonCompute();
                 break;
             case R.id.buttonReset:
-                editTextLength.setText(EMPTY_SET_TEXT);
-                editTextWeight.setText(EMPTY_SET_TEXT);
-                textViewIndex.setText(getString(R.string.textIndex));
+                buttonReset();
                 break;
         }
     }
 
-    private void bmiInit() {
+    private void buttonCompute() {
         try {
-            if (this.length < 0 || this.weight < 0) {
-                Toast.makeText(getApplicationContext(), WARNING, Toast.LENGTH_LONG).show();
+            double length = Double.parseDouble(editTextLength.getText().toString());
+            double weight = Double.parseDouble(editTextWeight.getText().toString());
+            if (length < Zero || weight < Zero) {
+                Toast.makeText(getApplicationContext(), R.string.warning, Toast.LENGTH_LONG).show();
             } else {
-                textViewIndex.setText(this.bmiNumber);
+                bmiNumber = new DecimalFormat(DECIMAL_FORMAT).format((weight / (length * length)));
             }
+            bmiInit();
         } catch (NumberFormatException e) {
-            Toast.makeText(getApplicationContext(), WARNING, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.warning, Toast.LENGTH_LONG).show();
         }
     }
+
+    private void buttonReset() {
+        editTextLength.setText(getString(R.string.textEmpty));
+        editTextWeight.setText(getString(R.string.textEmpty));
+        textViewIndex.setText(getString(R.string.textEmpty));
+    }
+
+    private void bmiInit() {
+        textViewIndex.setText(this.bmiNumber);
+    }
+
 }
