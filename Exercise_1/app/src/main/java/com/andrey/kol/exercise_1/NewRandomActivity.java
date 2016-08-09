@@ -22,9 +22,9 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_random);
 
-        viewRandom = (TextView) findViewById(R.id.textView);
+        viewRandom = (TextView) findViewById(R.id.textViewRandom);
 
-        buttonRandom = (Button) findViewById(R.id.button);
+        buttonRandom = (Button) findViewById(R.id.buttonRandom);
 
         randomNumber = new Random();
 

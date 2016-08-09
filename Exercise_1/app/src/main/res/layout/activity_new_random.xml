@@ -7,7 +7,7 @@
     android:id="@+id/rl">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRandom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -22,12 +22,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/buttonRandom"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewRandom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
