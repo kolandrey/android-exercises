@@ -3,84 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.andrey.kol.exercise_3.ColorDisplay">
+
+    <Button
+        android:id="@+id/buttonDisplayColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="15dp"
+        android:text="@string/buttonDisplayColor"
+        android:textColor="@color/colorWhite" />
 
     <RelativeLayout
         android:id="@+id/rl"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_above="@+id/editTextRed"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/buttonDisplayColor">
 
     </RelativeLayout>
 
-    <EditText
+    <LinearLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="3"
-        android:id="@+id/editTextRed"
-        android:layout_above="@+id/editTextGreen"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonDisplayColor"
+        android:layout_alignLeft="@+id/buttonDisplayColor"
+        android:layout_alignStart="@+id/buttonDisplayColor"
+        android:orientation="vertical"
+        android:padding="5dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="3"
-        android:id="@+id/editTextGreen"
-        android:layout_above="@+id/editTextBlue"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        <EditText
+            android:id="@+id/editTextRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="5"
+            android:hint="@string/redText"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="15dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="3"
-        android:id="@+id/editTextBlue"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        <EditText
+            android:id="@+id/editTextGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="5"
+            android:hint="@string/greenText"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="15dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonDisplayColor"
-        android:id="@+id/buttonDisplayColor"
-        android:layout_marginLeft="66dp"
-        android:layout_marginStart="66dp"
-        android:layout_above="@+id/editTextBlue"
-        android:layout_toRightOf="@+id/editTextRed"
-        android:layout_toEndOf="@+id/editTextRed" />
+        <EditText
+            android:id="@+id/editTextBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="5"
+            android:hint="@string/blueText"
+            android:inputType="number"
+            android:maxLength="3"
+            android:padding="15dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/red"
-        android:id="@+id/textView"
-        android:layout_above="@+id/editTextGreen"
-        android:layout_toLeftOf="@+id/editTextRed"
-        android:layout_toStartOf="@+id/editTextRed" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/green"
-        android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/editTextGreen"
-        android:layout_toLeftOf="@+id/editTextGreen"
-        android:layout_toStartOf="@+id/editTextGreen" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/blue"
-        android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/editTextBlue"
-        android:layout_toLeftOf="@+id/editTextBlue"
-        android:layout_toStartOf="@+id/editTextBlue" />
+    </LinearLayout>
 
 
 </RelativeLayout>

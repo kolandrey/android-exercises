@@ -12,16 +12,17 @@ import android.widget.Toast;
 
 public class ColorDisplay extends AppCompatActivity implements View.OnClickListener {
 
+    public static final int COLOR_MAX_INT = 255;
+    public static final String BACKGROUND_COLOR = "backgroundColor";
+    public static final int COLOR_MIN_INT = 0;
+
     private Button buttonColor;
-    private int red;
-    private int green;
-    private int blue;
-    private int backgroundColor;
     private EditText editTextRed;
     private EditText editTextGreen;
     private EditText editTextBlue;
     private RelativeLayout relativeLayout;
-    private boolean changeFlag = false;
+
+    private int backgroundColor;
 
 
     @Override
@@ -38,53 +39,36 @@ public class ColorDisplay extends AppCompatActivity implements View.OnClickListe
         buttonColor.setOnClickListener(this);
 
         if (savedInstanceState != null) {
-            red = savedInstanceState.getInt("red");
-            green = savedInstanceState.getInt("green");
-            blue = savedInstanceState.getInt("blue");
-            changeFlag = savedInstanceState.getBoolean("changeFlag");
-            if (changeFlag) {
-                setActivityBackground();
-            }
+            backgroundColor = savedInstanceState.getInt(BACKGROUND_COLOR);
+            setActivityBackground();
         }
-
-
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("red", red);
-        outState.putInt("green", green);
-        outState.putInt("blue", blue);
-        outState.putBoolean("changeFlag", changeFlag);
+        outState.putInt(BACKGROUND_COLOR, backgroundColor);
     }
 
     @Override
     public void onClick(View v) {
         try {
-            red = Integer.parseInt(editTextRed.getText().toString());
-            green = Integer.parseInt(editTextGreen.getText().toString());
-            blue = Integer.parseInt(editTextBlue.getText().toString());
+            int red = Integer.parseInt(editTextRed.getText().toString());
+            int green = Integer.parseInt(editTextGreen.getText().toString());
+            int blue = Integer.parseInt(editTextBlue.getText().toString());
             setActivityBackground();
-            changeFlag = true;
+            if (red < COLOR_MIN_INT || red > COLOR_MAX_INT || green < COLOR_MIN_INT || green > COLOR_MAX_INT || blue < COLOR_MIN_INT || blue > COLOR_MAX_INT) {
+                Toast.makeText(getApplicationContext(), R.string.warning, Toast.LENGTH_LONG).show();
+            } else {
+                backgroundColor = Color.rgb(red, green, blue);
+                setActivityBackground();
+            }
         } catch (NumberFormatException e) {
-            Toast.makeText(getApplicationContext(), "Wrong values", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.warning, Toast.LENGTH_LONG).show();
         }
-
-
     }
 
     private void setActivityBackground() {
-        try {
-            if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255) {
-                throw new NumberFormatException();
-            } else {
-                backgroundColor = Color.rgb(this.red, this.green, this.blue);
-                relativeLayout.setBackgroundColor(backgroundColor);
-            }
-        } catch (NumberFormatException e) {
-            Toast.makeText(getApplicationContext(), "Wrong values", Toast.LENGTH_LONG).show();
-        }
-
+        relativeLayout.setBackgroundColor(backgroundColor);
     }
 }

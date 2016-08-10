@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Exercise_3</string>
-    <string name="red">red:</string>
-    <string name="green">green:</string>
-    <string name="blue">blue:</string>
+    <string name="redText">red</string>
+    <string name="greenText">green</string>
+    <string name="blueText">blue</string>
     <string name="buttonDisplayColor">Display Color</string>
+    <string name="warning">Wrong values</string>
 </resources>

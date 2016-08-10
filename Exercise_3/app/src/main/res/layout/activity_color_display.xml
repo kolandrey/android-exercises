@@ -16,68 +16,51 @@
     </RelativeLayout>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="3"
         android:id="@+id/editTextRed"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonDisplayColor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:ems="5"
+        android:hint="@string/redText"
         android:inputType="number"
-        android:ems="3"
+        android:maxLength="3"
+        android:padding="15dp" />
+
+    <EditText
         android:id="@+id/editTextGreen"
-        android:layout_below="@+id/editTextRed"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rl"
+        android:layout_centerHorizontal="true"
+        android:ems="5"
+        android:hint="@string/greenText"
         android:inputType="number"
-        android:ems="3"
+        android:maxLength="3"
+        android:padding="15dp" />
+
+    <EditText
         android:id="@+id/editTextBlue"
-        android:layout_below="@+id/editTextGreen"
-        android:layout_alignLeft="@+id/editTextGreen"
-        android:layout_alignStart="@+id/editTextGreen" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonDisplayColor"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="5"
+        android:hint="@string/blueText"
+        android:inputType="number"
+        android:maxLength="3"
+        android:padding="15dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonDisplayColor"
         android:id="@+id/buttonDisplayColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/red"
-        android:id="@+id/textView"
-        android:layout_above="@+id/editTextGreen"
-        android:layout_toLeftOf="@+id/editTextRed"
-        android:layout_toStartOf="@+id/editTextRed" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/green"
-        android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/editTextGreen"
-        android:layout_toLeftOf="@+id/editTextGreen"
-        android:layout_toStartOf="@+id/editTextGreen" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/blue"
-        android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/editTextBlue"
-        android:layout_toLeftOf="@+id/editTextBlue"
-        android:layout_toStartOf="@+id/editTextBlue" />
+        android:text="@string/buttonDisplayColor"
+        android:textColor="@color/colorWhite" />
 
 
 </RelativeLayout>
