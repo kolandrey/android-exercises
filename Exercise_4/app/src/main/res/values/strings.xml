@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Exercise_4</string>
+    <string-array name="countries">
+        <item>1964 Sverige</item>
+        <item>1970 Finland</item>
+        <item>1979 Denmark</item>
+        <item>1980 England</item>
+        <item>1964 Norge</item>
+        <item>2009 Ukraine</item>
+    </string-array>
 </resources>
