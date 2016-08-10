@@ -12,7 +12,8 @@
         android:layout_centerHorizontal="true"
         android:ems="3"
         android:hint="@string/textLength"
-        android:maxLength="3"
+        android:maxLength="4"
+
         android:padding="15dp"/>
 
     <EditText

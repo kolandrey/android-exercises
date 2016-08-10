@@ -12,8 +12,9 @@
         android:layout_centerHorizontal="true"
         android:ems="3"
         android:hint="@string/textLength"
-        android:maxLength="3"
-         android:padding="15dp"/>
+        android:maxLength="4"
+        android:inputType="number"
+        android:padding="15dp"/>
 
     <EditText
         android:id="@+id/editWeight"
@@ -24,7 +25,8 @@
         android:ems="3"
         android:hint="@string/textWeight"
         android:maxLength="3"
-         android:padding="15dp"/>
+        android:inputType="number"
+        android:padding="15dp"/>
 
     <TextView
         android:id="@+id/textIndex"
