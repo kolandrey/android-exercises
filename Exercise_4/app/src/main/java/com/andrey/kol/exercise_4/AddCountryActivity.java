@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class AddCountryActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String STR = "STR";
+    public static final String SPACE = " ";
     private EditText editTextYear;
     private EditText editTextCountry;
     private Button buttonAddNew;
@@ -47,7 +48,7 @@ public class AddCountryActivity extends AppCompatActivity implements View.OnClic
         try {
             String year = editTextYear.getText().toString();
             String country = editTextCountry.getText().toString();
-            String str = year + " " + country;
+            String str = year + SPACE + country;
             Intent intentAddNew = new Intent(this, MyCountryActivity.class);
             intentAddNew.putExtra(STR, str);
             setResult(RESULT_OK, intentAddNew);

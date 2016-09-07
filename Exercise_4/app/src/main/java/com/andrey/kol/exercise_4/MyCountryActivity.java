@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -52,5 +53,11 @@ public class MyCountryActivity extends ListActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) return;
         countriesArray.add(data.getStringExtra(STR));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0,1,0,"add");
+        return super.onCreateOptionsMenu(menu);
     }
 }
