@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class NewRandomActivity extends AppCompatActivity implements View.OnClickListener {
 
-    final static int RANDOM_NUMBER = 101;
+    private final static int RANDOM_NUMBER = 101;
 
     private Button buttonRandom;
     private TextView textViewRandom;
