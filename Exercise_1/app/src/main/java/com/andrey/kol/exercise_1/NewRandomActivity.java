@@ -13,27 +13,23 @@ public class NewRandomActivity extends AppCompatActivity implements View.OnClick
     final static int RANDOM_NUMBER = 101;
 
     private Button buttonRandom;
-    private TextView viewRandom;
-    private Random randomNumber;
-    private int numberState;
+    private TextView textViewRandom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_random);
 
-        viewRandom = (TextView) findViewById(R.id.textViewRandom);
+        textViewRandom = (TextView) findViewById(R.id.textViewRandom);
 
         buttonRandom = (Button) findViewById(R.id.buttonRandom);
-
-        randomNumber = new Random();
 
         buttonRandom.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        numberState = randomNumber.nextInt(RANDOM_NUMBER);
-        viewRandom.setText(String.valueOf(numberState));
+        int numberState = new Random().nextInt(RANDOM_NUMBER);
+        textViewRandom.setText(String.valueOf(numberState));
     }
 }
