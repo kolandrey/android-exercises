@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Exercise_2</string>
+    <string name="bmi">ИМТ</string>
+    <string name="textLength">Рост (в сантиметрах):</string>
+    <string name="textWeight">Вес (в килограммах):</string>
+    <string name="textEmpty"></string>
+    <string name="buttonCompute">Посчитать</string>
+    <string name="buttonReset">Сброс</string>
+    <string name="warning">"Введены неверные значения  "\n" (Пример: "\n" Рост: 160  "\n" Вес: 60)"</string>
+    <string name="bmiInfoFat">Жирдяй!</string>
+    <string name="bmiInfoNormal">Красавчег!</string>
+    <string name="bmiInfoFrail">Дрищ!</string>
+
+</resources>

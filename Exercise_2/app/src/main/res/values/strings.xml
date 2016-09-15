@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">Exercise_2</string>
-    <string name="textLength">length(use . instead ,  value in meters):</string>
-    <string name="textWeight">weight(value in kg):</string>
+    <string name="bmi">BMI</string>
+    <string name="textLength">Length (value in cm):</string>
+    <string name="textWeight">Weight (value in kg):</string>
     <string name="textEmpty"></string>
     <string name="buttonCompute">Compute</string>
     <string name="buttonReset">Reset</string>
-    <string name="warning">"Wrong values"</string>
+    <string name="warning">"Wrong values  "\n" (Example: "\n" Length: 160  "\n" Weight: 60)"</string>
+    <string name="bmiInfoFat">You like a pig!</string>
+    <string name="bmiInfoNormal">Handsome ;)</string>
+    <string name="bmiInfoFrail">Frail!</string>
 
 </resources>
