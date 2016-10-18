@@ -5,4 +5,7 @@
     <string name="blueText">blue</string>
     <string name="buttonDisplayColor">Display Color</string>
     <string name="warning">Wrong values</string>
+    <string name="redColorWarning">Enter the correct values for red color, from 0 to 255</string>
+    <string name="greenColorWarning">Enter the correct values for green color, from 0 to 255</string>
+    <string name="blueColorWarning">Enter the correct values for blue color, from 0 to 255</string>
 </resources>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.andrey.kol.exercise_3.ColorDisplay">
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonDisplayColor"
