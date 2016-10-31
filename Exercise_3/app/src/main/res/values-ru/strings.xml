@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercise_3</string>
+    <string name="blueColorWarning">Введите корректные значения для синего цвета, от 0 до 255</string>
+    <string name="greenColorWarning">Введите корректные значения для зеленого цвета, от 0 до 255</string>
+    <string name="redColorWarning">Введите корректные значения для красного цвета, от 0 до 255</string>
+    <string name="greenText">зеленый</string>
+    <string name="buttonDisplayColor">Отобразить цвет</string>
+    <string name="blueText">синий</string>
+    <string name="redText">красный</string>
+    <string name="warning">Неверные значения</string>
+</resources>
