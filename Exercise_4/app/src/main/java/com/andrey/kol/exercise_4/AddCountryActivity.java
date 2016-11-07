@@ -8,10 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.andrey.kol.exercise_4.model.Country;
+
 public class AddCountryActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static final String STR = "STR";
-    public static final String SPACE = " ";
+    public static final String PARAMETER_COUNTRY = "PARAMETER_COUNTRY";
+
     private EditText editTextYear;
     private EditText editTextCountry;
     private Button buttonAddNew;
@@ -46,11 +48,12 @@ public class AddCountryActivity extends AppCompatActivity implements View.OnClic
 
     private void buttonAddNew() {
         try {
-            String year = editTextYear.getText().toString();
+            Integer year = Integer.parseInt(editTextYear.getText().toString());
             String country = editTextCountry.getText().toString();
-            String str = year + SPACE + country;
-            Intent intentAddNew = new Intent(this, MyCountryActivity.class);
-            intentAddNew.putExtra(STR, str);
+            Intent intentAddNew = new Intent(this, MainActivity.class);
+            intentAddNew.putExtra(PARAMETER_COUNTRY, new Country(
+                    year, country
+            ));
             setResult(RESULT_OK, intentAddNew);
             finish();
         } catch (NumberFormatException e) {

@@ -1,18 +1,15 @@
 <resources>
-    <string name="app_name">Exercise_4</string>
+    <string name="app_name">Countries</string>
     <string name="button">Add Country</string>
-    <string-array name="countries">
-        <item>1964 Sverige</item>
-        <item>1970 Finland</item>
-        <item>1979 Denmark</item>
-        <item>1980 England</item>
-        <item>1964 Norge</item>
-        <item>2009 Ukraine</item>
-    </string-array>
 
     <string name="buttonAddNew">Add country</string>
     <string name="buttonReturn">Return</string>
     <string name="hintYear">Year</string>
     <string name="hintAddNew">Country</string>
     <string name="warning">Wrong value</string>
+    <string name="action_settings">delete DB</string>
+    <string name="delete_item">Delete item</string>
+    <string name="edit_item">Edit item</string>
+    <string name="add_item_activity">Add new country</string>
+    <string name="edit_item_activity">Edit country</string>
 </resources>
