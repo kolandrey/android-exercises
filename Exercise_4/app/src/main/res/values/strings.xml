@@ -2,7 +2,6 @@
     <string name="app_name">Countries</string>
     <string name="button">Add Country</string>
 
-    <string name="buttonAddNew">Add country</string>
     <string name="buttonReturn">Return</string>
     <string name="hintYear">Year</string>
     <string name="hintAddNew">Country</string>
@@ -12,4 +11,9 @@
     <string name="edit_item">Edit item</string>
     <string name="add_item_activity">Add new country</string>
     <string name="edit_item_activity">Edit country</string>
+
+    <string name="add_button_text">ADD</string>
+    <string name="edit_button_text">EDIT</string>
+    <string name="title_add">Add country</string>
+    <string name="title_edit">Edit country</string>
 </resources>

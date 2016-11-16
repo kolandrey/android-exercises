@@ -44,22 +44,21 @@
         android:hint="@string/hintAddNew" />
 
     <Button
-        android:id="@+id/buttonAddNew"
+        android:id="@+id/buttonAddEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/view"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextCountry"
-        android:text="@string/button"
         android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/buttonReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonAddNew"
-        android:layout_alignBottom="@+id/buttonAddNew"
+        android:layout_alignBaseline="@+id/buttonAddEdit"
+        android:layout_alignBottom="@+id/buttonAddEdit"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/view"
         android:layout_alignParentStart="true"

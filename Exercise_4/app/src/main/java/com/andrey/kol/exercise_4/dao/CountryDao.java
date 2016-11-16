@@ -13,10 +13,6 @@ import java.util.List;
 
 import static com.andrey.kol.exercise_4.dao.DBHelper.TABLE_COUNTRIES;
 
-/**
- * Created by feliss on 11/5/16.
- */
-
 public class CountryDao {
     private static CountryDao INSTANCE;
     private DBHelper dbHelper;
@@ -60,9 +56,19 @@ public class CountryDao {
         database.close();
     }
 
-    public void deleteAll(){
+    public void update(Country item) {
         SQLiteDatabase database = dbHelper.getWritableDatabase();
-        database.delete(TABLE_COUNTRIES,null,null);
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.COLUMN_YEAR, item.getYear());
+        values.put(DBHelper.COLUMN_NAME, item.getName());
+        database.update(TABLE_COUNTRIES, values, DBHelper.COLUMN_ID
+                + " = " + item.getId(), null);
+        database.close();
+    }
+
+    public void deleteAll() {
+        SQLiteDatabase database = dbHelper.getWritableDatabase();
+        database.delete(TABLE_COUNTRIES, null, null);
         database.close();
     }
 
