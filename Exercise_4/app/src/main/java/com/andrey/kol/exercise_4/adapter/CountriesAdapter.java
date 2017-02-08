@@ -44,8 +44,7 @@ public class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.Coun
 
     @Override
     public CountriesAdapter.CountryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.row_country, null, true);
         return new CountryViewHolder(rowView);
     }
