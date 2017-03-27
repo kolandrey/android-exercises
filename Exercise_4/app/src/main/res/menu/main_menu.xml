@@ -6,7 +6,7 @@
     <item
         android:id="@+id/buttonDbDelete"
         android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 
 </menu>
 
